@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+require "graphql_schema_linter"
