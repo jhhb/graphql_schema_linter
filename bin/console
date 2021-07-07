@@ -38,6 +38,8 @@ module Lib
   end
 end
 
+include Lib
+
 def main
   document
 end
