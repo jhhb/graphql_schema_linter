@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
+require "graphql"
 require "graphql_schema_linter"
 require "pry"
 
@@ -10,5 +11,35 @@ require "pry"
 
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
+
+SCHEMA_PATH = "resources/schema.graphql"
+
+module Lib
+  def schema
+    @schema ||= GraphQL::Schema.from_definition(File.read(SCHEMA_PATH))
+  end
+
+  def document
+    @document ||= begin
+      schema = schema_from_file
+      definition = schema.to_definition
+      GraphQL.parse(definition)
+    end
+  end
+
+  private
+
+  def schema_from_definition(definition_str)
+    GraphQL::Schema::BuildFromDefinition.from_definition(definition_str, default_resolve: true)
+  end
+
+  def schema_from_file(path = SCHEMA_PATH)
+    GraphQL::Schema::BuildFromDefinition.from_definition_path(path, default_resolve: true)
+  end
+end
+
+def main
+  document
+end
 
 Pry.start
