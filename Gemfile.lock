@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    graphql_schema_linter (0.1.0)
+    graphql_schema_linter (0.0.1)
       pry
 
 GEM
@@ -49,6 +49,7 @@ GEM
     unicode-display_width (2.0.0)
 
 PLATFORMS
+  ruby
   x86_64-darwin-18
 
 DEPENDENCIES

@@ -4,7 +4,7 @@ require_relative "lib/graphql_schema_linter/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "graphql_schema_linter"
-  spec.version       = GraphqlSchemaLinter::VERSION
+  spec.version       = GraphQLSchemaLinter::VERSION
   spec.authors       = ["jhhb"]
   spec.email         = ["admin@admin-c.local"]
 

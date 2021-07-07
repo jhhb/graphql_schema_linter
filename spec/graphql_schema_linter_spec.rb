@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe GraphqlSchemaLinter do
+RSpec.describe GraphQLSchemaLinter do
   it "has a version number" do
-    expect(GraphqlSchemaLinter::VERSION).not_to be nil
+    expect(GraphQLSchemaLinter::VERSION).not_to be nil
   end
 
   it "does something useful" do
